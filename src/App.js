@@ -70,7 +70,7 @@ function App() {
       }
   }
   const PGNTable = ({games}) => {
-    const chessTableData = () => {
+    const ChessTableData = () => {
       return games.map(game => {
         const {White, Black, Event, Site, Result} = game.headers
         return (
@@ -94,7 +94,7 @@ function App() {
           <th>Site</th>
           <th>Result</th>
         </tr>
-        {chessTableData()}
+        <ChessTableData/>
       </table>
     )
   }
@@ -102,10 +102,10 @@ function App() {
   return (
     <div className="App">
       <main className="App-header">
-        <h1 className="text-5xl">Chess Openings Trainer</h1>
+        <h1 className="text-5xl">Chess Pro Watcher</h1>
         <div>
           <MyChessboard/>
-          <PGNTable games={games}></PGNTable>
+          <PGNTable games={games}/>
         </div>
       </main>
     </div>
