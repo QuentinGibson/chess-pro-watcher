@@ -107,18 +107,6 @@ function App() {
               <br/>
             </div>
             <Controls />
-            <label style={{ marginLeft: 552, marginTop: 20 }} className="text-gray-800 text-sm font-bold leading-tight tracking-normal mb-2">
-              Move Every
-              <input type="number" value={1} ref={playTimerRef} className="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 mx-2 font-normal w-10 h-10 items-center pl-3 text-sm border-gray-300 border shadow" />
-              's
-            </label>
-              <button 
-                className="mx-2 my-2 bg-white transition duration-150 ease-in-out hover:border-gray-900 hover:text-gray-900 rounded border border-gray-800 text-gray-800 px-6 py-2 text-xs">
-                Start
-              </button>
-              <button
-                className="mx-2 my-2 bg-white transition duration-150 ease-in-out hover:border-gray-900 hover:text-gray-900 rounded border border-gray-800 text-gray-800 px-6 py-2 text-xs"
-                >Stop</button>
           </div>
         )
       } else {
