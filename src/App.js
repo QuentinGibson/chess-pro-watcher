@@ -22,19 +22,22 @@ const createGame = (pgn) => {
 const pgnList = [chesspgn, chesspgn2]
 const gameList = pgnList.map(pgn => createGame(pgn))
 
+
 function App() {
   const [games, setGames] = useState([])
   const [game, setGame] = useState(null)
   const [turn, setTurn] = useState(0)
   const turnInputRef = useRef();
+  const playTimerRef = useRef();
   useEffect(() => {
     setGames(gameList)
   }, [])
   useEffect(() => {
     if (turnInputRef.current){
-      turnInputRef.current.value = turn
+      turnInputRef.current.value = turn + 1
     }
   }, [turn])
+ 
   const MyChessboard = () => {
     const Controls = () => {
       return (
@@ -87,28 +90,43 @@ function App() {
             </div>
             <div style={{marginLeft: 250}}>
               <Chessboard calcWidth={(screenWidth, screenHeight) => 750} position={game.fens[turn]} />
-              <p className="text-gray-800 text-sm font-bold leading-tight tracking-normal mb-2" style={{marginLeft: 320, marginTop: 20}}>
+              <label className="text-gray-800 text-sm font-bold leading-tight tracking-normal mb-2" style={{marginLeft: 320, marginTop: 20}}>
                 Move
                 <input
                   className="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 mx-2 font-normal w-10 h-10 items-center pl-3 text-sm border-gray-300 rounded border shadow"
-                  type="text"
+                  type="number"
                   ref={turnInputRef}
                   onKeyPress={(e) => {
                     if (e.key === "Enter") {
-                      const userInput = parseInt(turnInputRef.current.value)
-                      if (!isNaN(userInput)) setTurn(userInput)
+                      const userInput = parseInt(turnInputRef.current.value) - 1
+                      if (!isNaN(userInput) && (userInput > 0 && userInput < game.fens.length - 1)) setTurn(userInput)
                     }
                   }} />
                 of {game.fens.length}
-              </p>
+              </label>
+              <br/>
             </div>
             <Controls />
+            <label style={{ marginLeft: 552, marginTop: 20 }} className="text-gray-800 text-sm font-bold leading-tight tracking-normal mb-2">
+              Move Every
+              <input type="number" value={1} ref={playTimerRef} className="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 mx-2 font-normal w-10 h-10 items-center pl-3 text-sm border-gray-300 border shadow" />
+              's
+            </label>
+              <button 
+                className="mx-2 my-2 bg-white transition duration-150 ease-in-out hover:border-gray-900 hover:text-gray-900 rounded border border-gray-800 text-gray-800 px-6 py-2 text-xs">
+                Start
+              </button>
+              <button
+                className="mx-2 my-2 bg-white transition duration-150 ease-in-out hover:border-gray-900 hover:text-gray-900 rounded border border-gray-800 text-gray-800 px-6 py-2 text-xs"
+                >Stop</button>
           </div>
         )
       } else {
         return (
-          <div >
-            <Chessboard calcWidth={(screenWidth, screenHeight) => 750} />
+          <div>
+            <div style={{marginLeft: 250}}>
+              <Chessboard calcWidth={(screenWidth, screenHeight) => 750} />
+            </div>
             <Controls />
           </div>
         )
