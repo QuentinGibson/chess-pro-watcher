@@ -2,6 +2,10 @@ import './App.css';
 import Chessboard from 'chessboardjsx';
 import chesspgn from './database/magnus.pgn';
 import chesspgn2 from './database/ct-2842-2762-2020.3.25.pgn'
+import chesspgn3 from './database/game3.pgn'
+import chesspgn4 from './database/game4.pgn'
+import chesspgn5 from './database/game5.pgn'
+import chesspgn6 from './database/game6.pgn'
 import Chess from 'chess.js'
 import { useEffect, useRef, useState } from 'react';
 import { VscTriangleLeft, VscTriangleRight } from 'react-icons/vsc';
@@ -19,7 +23,7 @@ const createGame = (pgn) => {
   return {fens, headers}
 }
 
-const pgnList = [chesspgn, chesspgn2]
+const pgnList = [chesspgn, chesspgn2, chesspgn3, chesspgn4, chesspgn5, chesspgn6]
 const gameList = pgnList.map(pgn => createGame(pgn))
 
 
