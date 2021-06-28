@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/chess-pro-watcher/static/css/main.1aee512d.chunk.css",
+    "main.js": "/chess-pro-watcher/static/js/main.72c00bba.chunk.js",
+    "main.js.map": "/chess-pro-watcher/static/js/main.72c00bba.chunk.js.map",
+    "runtime-main.js": "/chess-pro-watcher/static/js/runtime-main.42cfff1a.js",
+    "runtime-main.js.map": "/chess-pro-watcher/static/js/runtime-main.42cfff1a.js.map",
+    "static/js/2.b18f8233.chunk.js": "/chess-pro-watcher/static/js/2.b18f8233.chunk.js",
+    "static/js/2.b18f8233.chunk.js.map": "/chess-pro-watcher/static/js/2.b18f8233.chunk.js.map",
+    "static/js/3.91f20aec.chunk.js": "/chess-pro-watcher/static/js/3.91f20aec.chunk.js",
+    "static/js/3.91f20aec.chunk.js.map": "/chess-pro-watcher/static/js/3.91f20aec.chunk.js.map",
+    "index.html": "/chess-pro-watcher/index.html",
+    "static/css/main.1aee512d.chunk.css.map": "/chess-pro-watcher/static/css/main.1aee512d.chunk.css.map",
+    "static/js/2.b18f8233.chunk.js.LICENSE.txt": "/chess-pro-watcher/static/js/2.b18f8233.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.42cfff1a.js",
+    "static/js/2.b18f8233.chunk.js",
+    "static/css/main.1aee512d.chunk.css",
+    "static/js/main.72c00bba.chunk.js"
+  ]
+}
