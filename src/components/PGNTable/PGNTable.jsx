@@ -1,4 +1,4 @@
-import ChessTableData from '../ChessTableData'
+import ChessTableData from 'components/ChessTableData'
 
 const PGNTable = ({games, setGame}) => {
   return (
