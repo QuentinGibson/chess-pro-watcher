@@ -18,8 +18,11 @@ const MyChessboard = () => {
           <Header white name={game.headers.White}/>
           <Header white={false} name={game.headers.Black} />
         </div>
-        <div style={{marginLeft: 250}}>
-          <Chessboard calcWidth={(screenWidth, screenHeight) => 750} position={game.fens[turn]} />
+        <div style={{marginLeft: '35%'}}>
+          <Chessboard calcWidth={screen => {
+            console.log(screen)
+            return screen.screenWidth * .3
+          }} position={game.fens[turn]} />
           <MoveCounter turn={turn} setTurn={setTurn} game={game}/>
           <br/>
         </div>
