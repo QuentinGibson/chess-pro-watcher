@@ -1,6 +1,8 @@
 import ChessTableData from 'components/ChessTableData'
+import useChessGame from 'hooks/useChessGame'
 
-const PGNTable = ({games, setGame}) => {
+const PGNTable = () => {
+  const {games, setGame} = useChessGame()
   return (
     <table className="table-auto whitespace-nowrap border-gray-100 border rounded-lg">
       <thead className="bg-gray-100">

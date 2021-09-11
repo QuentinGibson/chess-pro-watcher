@@ -1,34 +1,31 @@
-import { useState } from 'react'
 import Controls from 'components/Controls'
 import PGNTable from 'components/PGNTable'
 import Header from 'components/Header'
 import MoveCounter from 'components/MoveCounter'
-import useChessMaker from 'hooks/useChessMaker'
-import newGameList from 'database'
 import Chessboard from 'chessboardjsx';
+import useChessGame from 'hooks/useChessGame';
+
 
 const MyChessboard = () => {
-  const [turn, setTurn] = useState(0)
-  const [games] = useChessMaker(newGameList)
-  const [game, setGame] = useState(games[0])
+  const {game} = useChessGame()
   return (
     <>
       <div >
         <div className="flex justify-between">
-          <Header white name={game.headers.White}/>
-          <Header white={false} name={game.headers.Black} />
+          <Header white />
+          <Header white={false} />
         </div>
         <div style={{marginLeft: '35%'}}>
           <Chessboard calcWidth={screen => {
             console.log(screen)
             return screen.screenWidth * .3
           }} position={game.fens[turn]} />
-          <MoveCounter turn={turn} setTurn={setTurn} game={game}/>
+          <MoveCounter />
           <br/>
         </div>
-        <Controls setTurn={setTurn} game={game}/>
+        <Controls/>
       </div>
-      <PGNTable games={games} setGame={setGame}/>
+      <PGNTable />
     </>
   )
 } 

@@ -1,7 +1,9 @@
 import { VscTriangleLeft, VscTriangleRight } from 'react-icons/vsc';
 import {BsSkipEndFill, BsSkipStartFill} from 'react-icons/bs'
+import useChessGame from 'hooks/useChessGame';
 
-const Controls = ({setTurn, game}) => {
+const Controls = () => {
+  const {setTurn, game} = useChessGame()
   return (
     <div className="flex justify-center">
       <button 

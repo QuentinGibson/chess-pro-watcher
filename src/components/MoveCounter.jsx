@@ -1,5 +1,8 @@
 import {useEffect, useRef} from 'react'
-const MoveConter = ({turn, setTurn, game}) => {
+import useChessGame from 'hooks/useChessGame'
+
+const MoveConter = () => {
+  const {turn, setTurn, game} = useChessGame()
   const turnInputRef = useRef()
   useEffect(() => {
     if (turnInputRef.current){
