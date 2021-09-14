@@ -1,0 +1,3 @@
+.chessboard-container {
+    @apply flex justify-between
+}

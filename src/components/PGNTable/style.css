@@ -1,0 +1,7 @@
+th {
+    @apply text-left py-5 rounded-tl-lg
+}
+
+.header-text {
+    @apply text-sm font-medium leading-none text-gray-900
+}

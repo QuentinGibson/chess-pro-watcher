@@ -5,13 +5,14 @@ import MoveCounter from 'components/MoveCounter/MoveCounter'
 import Chessboard from 'chessboardjsx';
 import { ChessContext } from 'App';
 import { useContext } from 'react';
+import './style.css'
 
 const MyChessboard = () => {
   const {game, turn} = useContext(ChessContext)
   return (
     <>
       <div >
-        <div className="flex justify-between">
+        <div className="chessboard-container">
           <Header white />
           <Header white={false} />
         </div>

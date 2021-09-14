@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { ChessContext } from 'App'
+import './style.css'
 
 const ChessTableData = () => {
   const {loadGame, games, adjustTurn} = useContext(ChessContext)
@@ -10,13 +11,13 @@ const ChessTableData = () => {
     return (
       <tbody>
         <tr className={trClass}>
-          <td className="pb-5 pt-8 pr-5 pl-4"><p className="text-sm">{White}</p></td>
-          <td className="pb-5 pt-8 pr-5 pl-4"><p className="text-sm">{Black}</p></td>
-          <td className="pb-5 pt-8 pr-5 pl-4">{Event}</td>
-          <td className="pb-5 pt-8 pr-5 pl-4">{Site}</td>
-          <td className="pb-5 pt-8 pr-5 pl-4">{Result}</td>
-          <td className="pb-5 pt-8 pr-5 pl-4">
-            <button className="text-base font-bold leading-none underline text-center text-gray-900 hover:text-indigo-700" onClick={() => {
+          <td className="table-cell"><p className="text-sm">{White}</p></td>
+          <td className="table-cell"><p className="text-sm">{Black}</p></td>
+          <td className="table-cell">{Event}</td>
+          <td className="table-cell">{Site}</td>
+          <td className="table-cell">{Result}</td>
+          <td className="table-cell">
+            <button className="btn-active" onClick={() => {
               adjustTurn(0)
               loadGame(game)
             }}>

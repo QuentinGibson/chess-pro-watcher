@@ -1,0 +1,11 @@
+.white-container {
+    @apply border border-gray-300  h-8 w-5/12 mb-4 rounded-md flex items-center justify-center
+}
+
+.black-container {
+    @apply border border-gray-300  h-8 w-5/12 bg-gray-900  mb-4 rounded-md flex items-center justify-center
+}
+
+.name {
+    @apply text-xs text-gray-800 dark:text-gray-400 font-normal
+}
