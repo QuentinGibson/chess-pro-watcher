@@ -13,23 +13,13 @@ const createGame = (pgn) => {
   return {fens, headers}
 }
 
-const defaultGame = (() => {
-  const chess = new Chess()
-  const fens = chess.history().map(function (move) {
-    chess.move(move);
-    return chess.fen()
-  })
-  chess.header('White', 'Nobody','Black', 'Nobody', 'Event', 'N/A', 'Site', 'N/A', 'Result', 'N/A')
-  const headers = chess.header()
-  return {fens, headers}
-})()
 
 const useChessMaker = (rawChessList) => {
-  const [games, setGames] = useState([defaultGame])
-  const newGameList = rawChessList.map(game => createGame(game))
+  const [games, setGames] = useState([])
   useEffect(() => {
+    const newGameList = rawChessList.map(game => createGame(game))
     setGames(newGameList)
-  }, [])
+  }, [rawChessList])
 
   return [ games ]
 }

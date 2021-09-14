@@ -1,8 +1,8 @@
-import {useEffect, useRef} from 'react'
-import useChessGame from 'hooks/useChessGame'
+import {useContext, useEffect, useRef} from 'react'
+import { ChessContext } from 'App'
 
 const MoveConter = () => {
-  const {turn, setTurn, game} = useChessGame()
+  const {game, adjustTurn, turn} = useContext(ChessContext)
   const turnInputRef = useRef()
   useEffect(() => {
     if (turnInputRef.current){
@@ -19,7 +19,7 @@ const MoveConter = () => {
         onKeyPress={(e) => {
           if (e.key === "Enter") {
             const userInput = parseInt(turnInputRef.current.value) - 1
-            if (!isNaN(userInput) && (userInput > 0 && userInput < game.fens.length - 1)) setTurn(userInput)
+            if (!isNaN(userInput) && (userInput > 0 && userInput < game.fens.length - 1)) adjustTurn(userInput)
           }
         }} />
       of {game.fens.length}

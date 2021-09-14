@@ -3,11 +3,11 @@ import PGNTable from 'components/PGNTable'
 import Header from 'components/Header'
 import MoveCounter from 'components/MoveCounter'
 import Chessboard from 'chessboardjsx';
-import useChessGame from 'hooks/useChessGame';
-
+import { ChessContext } from 'App';
+import { useContext } from 'react';
 
 const MyChessboard = () => {
-  const {game} = useChessGame()
+  const {game, turn} = useContext(ChessContext)
   return (
     <>
       <div >
@@ -17,7 +17,6 @@ const MyChessboard = () => {
         </div>
         <div style={{marginLeft: '35%'}}>
           <Chessboard calcWidth={screen => {
-            console.log(screen)
             return screen.screenWidth * .3
           }} position={game.fens[turn]} />
           <MoveCounter />
@@ -25,7 +24,7 @@ const MyChessboard = () => {
         </div>
         <Controls/>
       </div>
-      <PGNTable />
+      <PGNTable/>
     </>
   )
 } 
