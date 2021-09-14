@@ -1,7 +1,7 @@
 import Controls from 'components/Controls'
 import PGNTable from 'components/PGNTable'
-import Header from 'components/Header'
-import MoveCounter from 'components/MoveCounter'
+import Header from 'components/Header/Header'
+import MoveCounter from 'components/MoveCounter/MoveCounter'
 import Chessboard from 'chessboardjsx';
 import { ChessContext } from 'App';
 import { useContext } from 'react';
