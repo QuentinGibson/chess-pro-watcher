@@ -1,13 +1,15 @@
-import { useContext } from 'react'
-import { ChessContext } from 'App'
-import './style.css'
+import React, { useContext } from 'react';
+import { ChessContext } from 'App';
+import './style.css';
 
 const ChessTableData = () => {
-  const {loadGame, games, adjustTurn} = useContext(ChessContext)
+  const { loadGame, games, adjustTurn } = useContext(ChessContext);
   const gameList = games.map((game, index) => {
-    const even = index % 2 === 0
-    const trClass = even ? "" : "bg-gray-100"
-    const { White, Black, Event, Site, Result } = game.headers
+    const even = index % 2 === 0;
+    const trClass = even ? '' : 'bg-gray-100';
+    const {
+      White, Black, Event, Site, Result,
+    } = game.headers;
     return (
       <tbody>
         <tr className={trClass}>
@@ -17,22 +19,26 @@ const ChessTableData = () => {
           <td className="table-cell">{Site}</td>
           <td className="table-cell">{Result}</td>
           <td className="table-cell">
-            <button className="btn-active" onClick={() => {
-              adjustTurn(0)
-              loadGame(game)
-            }}>
+            <button
+              type="button"
+              className="btn-active"
+              onClick={() => {
+                adjustTurn(0);
+                loadGame(game);
+              }}
+            >
               Load Game
             </button>
           </td>
         </tr>
       </tbody>
-    )
-  })
+    );
+  });
   return (
     <>
       {gameList}
     </>
-  )
-}
+  );
+};
 
-export default ChessTableData
+export default ChessTableData;
